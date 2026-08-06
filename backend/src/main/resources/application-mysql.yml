@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/smartleave?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: ${SMARTLEAVE_DB_USERNAME:root}
+    password: ${SMARTLEAVE_DB_PASSWORD:password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+app:
+  jwt:
+    secret: ${SMARTLEAVE_JWT_SECRET:smartleave-assessment-secret-key-2026-smartleave-assessment-secret-key-2026}
+    expiration-ms: 86400000
